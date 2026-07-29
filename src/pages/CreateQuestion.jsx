@@ -7,4 +7,4 @@ function CreateQuestion() {
   );
 }
 
-export default CreateQuestion
+export default CreateQuestion;
