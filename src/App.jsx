@@ -1,4 +1,6 @@
+import { Routes, Route } from 'react-router-dom';
 import QuestionCard from './components/QuestionCard';
+import Navbar from './components/Navbar';
 import './App.css';
 
 const fakeQuestions = [
@@ -14,9 +16,9 @@ const fakeQuestions = [
   },
 ];
 
-function App() {
+function HomePage() {
   return (
-    <div>
+    <>
       <h1>Q&A</h1>
       <h2>Questions</h2>
       <div className="grid">
@@ -24,6 +26,27 @@ function App() {
           <QuestionCard key={question.id} question={question} />
         ))}
       </div>
+    </>
+  );
+}
+
+function CreateQuestionPage() {
+  return (
+    <div>
+      <h1>Create a question</h1>
+      <p>Question creation form will go here.</p>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/api/questions" element={<CreateQuestionPage />} />
+      </Routes>
     </div>
   );
 }
