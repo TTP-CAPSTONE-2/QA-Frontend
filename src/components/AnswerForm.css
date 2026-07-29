@@ -1,0 +1,9 @@
+label {
+    display: block;
+    text-align: left;
+}
+textarea {
+  resize: none;
+  width: 700px;
+  height: 150px;
+}
