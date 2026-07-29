@@ -1,51 +1,19 @@
 import { Routes, Route } from 'react-router-dom';
-import QuestionCard from './components/QuestionCard';
 import Navbar from './components/Navbar';
 import './App.css';
+import Home from './pages/Home';
+import CreateQuestion from './pages/CreateQuestion';
+import QuestionDetail from './pages/QuestionDetail';
 
-const fakeQuestions = [
-  {
-    id: 1,
-    title: 'test',
-    body: 'test',
-  },
-  {
-    id: 2,
-    title: 'test2',
-    body: 'test2',
-  },
-];
-
-function HomePage() {
-  return (
-    <>
-      <h1>Q&A</h1>
-      <h2>Questions</h2>
-      <div className="grid">
-        {fakeQuestions.map((question) => (
-          <QuestionCard key={question.id} question={question} />
-        ))}
-      </div>
-    </>
-  );
-}
-
-function CreateQuestionPage() {
-  return (
-    <div>
-      <h1>Create a question</h1>
-      <p>Question creation form will go here.</p>
-    </div>
-  );
-}
 
 function App() {
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/api/questions" element={<CreateQuestionPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/api/questions" element={<CreateQuestion />} />
+        <Route path="/api/questions/:id" element={<QuestionDetail />} />
       </Routes>
     </div>
   );
