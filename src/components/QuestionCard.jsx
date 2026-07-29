@@ -1,8 +1,7 @@
 function QuestionCard({ question }) {
     return (
         <div className="card">
-            <h3>Question: {question.title}</h3>
-            <p>{question.body}</p>
+            <h3>{question.title}</h3>
         </div>
     );
 }

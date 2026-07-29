@@ -109,3 +109,33 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space);
+  padding: var(--space);
+}
+
+.card {
+  flex: 1 1 160px;
+  max-width: 220px;
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h3 {
+  font-size: 15px;
+  padding: 8px;
+}
+
+.card p {
+  color: var(--muted);
+  padding: 0 8px 8px;
+}
