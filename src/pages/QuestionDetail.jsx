@@ -6,12 +6,12 @@ function QuestionDetail() {
     const [question, setQuestion] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const { id } = useParams()
-    
+
     useEffect(() => {
         const fetchQuestion = async () => {
-            const response = await fetch(`http:localhost:3000/api/questions/${id}`)
+            const response = await fetch(`http://localhost:3000/api/questions/${id}`)
             const data = await response.json()
-
+            console.log(data)
             setQuestion(data)
             setIsLoading(false)
         }
