@@ -24,6 +24,7 @@ function Home() {
         fetchQuestions();
     }, []);
 
+    //Upvote and Downvote Questions
     const handleVote = (updatedQuestion) => {
         setQuestions((currentQuestions) =>
             currentQuestions.map((question) =>
@@ -31,6 +32,12 @@ function Home() {
             )
         );
     };
+    //Delete a Question
+    const handleDelete = (deletedId) => {
+        setQuestions((currentQuestions) =>
+            currentQuestions.filter((question) => question.id !== deletedId)
+    );
+};
 
     if (loading) {
         return (
@@ -57,7 +64,9 @@ function Home() {
                     <QuestionCard 
                     key={question.id} 
                     question={question} 
-                    onVote={handleVote} />
+                    onVote={handleVote} 
+                    onDelete={handleDelete}
+                    />
                 </Link>
                 
             ))}

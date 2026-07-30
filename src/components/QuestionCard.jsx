@@ -1,4 +1,5 @@
-function QuestionCard({ question, onVote }) {
+function QuestionCard({ question, onVote, onDelete }) {
+    //Function to Upvote or Downvote Quesiton card
     const handleVote = async (event, delta) => {
         event.preventDefault();
         event.stopPropagation();
@@ -20,11 +21,36 @@ function QuestionCard({ question, onVote }) {
         }
     };
 
+    //Function to delete question cards
+    const handleDelete = async (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        try {
+            const response = await fetch(`http://localhost:3000/api/questions/${question.id}`, {
+                method: "DELETE",
+            });
+
+            if (!response.ok) {
+                throw new Error("Unable to delete question!");
+            };
+
+            if (onDelete) {
+                onDelete(question.id);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <div className="card">
             <h3>{question.title}</h3>
             <h4>{question.body}</h4>
             <div style={{ marginTop: 12, display: "flex", gap: 8, alignItems: "center" }}>
+                <button type="button" onClick={handleDelete}>
+                    Delete
+                </button>
                 <button type="button" onClick={(event) => handleVote(event, 1)}>
                     ▲ Upvote
                 </button>
