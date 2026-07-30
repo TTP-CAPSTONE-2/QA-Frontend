@@ -1,0 +1,27 @@
+.user-header-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  background-color: #E5E7EB; 
+  flex-shrink: 0; 
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #6B7280;
+  margin-top: 2px;
+}
