@@ -1,15 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-g
-function App() {
-  const [count, setCount] = useState(0)
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import './App.css';
+import CreateQuestion from './pages/CreateQuestion';
+import QuestionDetail from './pages/QuestionDetail';
 
+
+function App() {
   return (
-x 
-  )
+    <div className='app-container'>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/api/questions" element={<CreateQuestion />} />
+        <Route path="/api/questions/:id" element={<QuestionDetail />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
