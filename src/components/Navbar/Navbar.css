@@ -1,0 +1,43 @@
+/* Navbar styles for the currently rendered markup */
+:root {
+  --nav-bg: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #3b82f6;
+  --hover-bg: rgba(255, 255, 255, 0.1);
+  --nav-height: 70px;
+  --transition: all 0.3s ease;
+}
+
+.navbar {
+  background-color: var(--nav-bg);
+  height: var(--nav-height);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 20px;
+  height: 100%;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  background-color: var(--hover-bg);
+  color: var(--accent-color);
+}

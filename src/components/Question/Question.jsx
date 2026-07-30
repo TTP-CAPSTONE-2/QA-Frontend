@@ -1,4 +1,5 @@
 import UserHeader from "../UserHeader/UserHeader"
+import './Question.css'
 
 function Question ({question}) {
 

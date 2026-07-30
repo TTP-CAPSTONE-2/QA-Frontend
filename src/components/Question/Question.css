@@ -1,0 +1,20 @@
+.question-container {
+    max-width: 700px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+}
+
+.question-title {
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.question-body {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+}
