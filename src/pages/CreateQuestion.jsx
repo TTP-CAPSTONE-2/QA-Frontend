@@ -36,13 +36,9 @@ function CreateQuestion() {
       const createdQuestion = await response.json()
       const questionId = createdQuestion?.id
 
-      if (questionId) {
-        navigate(`/api/questions/${questionId}`)
-      } else {
-        navigate("/")
-      }
+      navigate("/")
     } catch (err) {
-      setError(err?.message || "Unable to create question. Please try again.")
+      setError(err.message || "Unable to create question. Please try again.")
     } finally {
       setLoading(false)
     }
