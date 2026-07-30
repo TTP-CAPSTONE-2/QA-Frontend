@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import QuestionCard from "../components/QuestionCard";
+import { Link } from "react-router-dom";
 
 function Home() {
     const [questions, setQuestions] = useState([]);
@@ -9,14 +10,27 @@ function Home() {
     
     useEffect(() => {
         async function fetchQuestions() {
-            const response = await fetch("http://localhost:3000/api/questions");
-            const data = await response.json();
-            setQuestions(data);
-            setLoading(false);
+            try {
+                const response = await fetch("http://localhost:3000/api/questions");
+                const data = await response.json();
+                setQuestions(data);
+                setLoading(false);
+            } catch (err) {
+                setError("Failed to get Questions!");
+                setLoading(false);
+            }
         };
 
         fetchQuestions();
     }, []);
+
+    const handleVote = (updatedQuestion) => {
+        setQuestions((currentQuestions) =>
+            currentQuestions.map((question) =>
+                question.id === updatedQuestion.id ? updatedQuestion : question
+            )
+        );
+    };
 
     if (loading) {
         return (
@@ -30,7 +44,22 @@ function Home() {
         <h2>Questions</h2>
         <div className="grid">
             {questions.map((question) => (
-                <QuestionCard key={question.id} question={question} />
+                <Link 
+                to={`/api/questions/${question.id}`}
+                key={question.id}
+                style={
+                    {
+                        textDecoration: 'none', 
+                        color: 'inherit' 
+                    }
+                }
+                >
+                    <QuestionCard 
+                    key={question.id} 
+                    question={question} 
+                    onVote={handleVote} />
+                </Link>
+                
             ))}
         </div>
     </>
