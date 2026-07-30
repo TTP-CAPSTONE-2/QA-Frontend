@@ -37,4 +37,4 @@ function QuestionDetail() {
     )
 }
 
-export default QuestionDetail
+export default QuestionDetail;

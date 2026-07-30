@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
 import './App.css';
 import CreateQuestion from './pages/CreateQuestion';
@@ -10,11 +10,13 @@ function App() {
   return (
     <div className='app-container'>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/api/questions" element={<CreateQuestion />} />
-        <Route path="/api/questions/:id" element={<QuestionDetail />} />
-      </Routes>
+      <main className='main-content'>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/api/questions" element={<CreateQuestion />} />
+          <Route path="/api/questions/:id" element={<QuestionDetail />} />
+        </Routes>
+      </main>
     </div>
   );
 }
