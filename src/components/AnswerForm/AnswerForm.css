@@ -7,3 +7,34 @@ textarea {
   width: 700px;
   height: 150px;
 }
+
+.answer-form {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10rem;
+}
+
+.answer-form label {
+    font-weight: 600;
+}
+
+.answer-form textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.answer-form button {
+    align-self: flex-start;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

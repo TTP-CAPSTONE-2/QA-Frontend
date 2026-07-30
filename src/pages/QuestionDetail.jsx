@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import AnswerList from "../components/AnswerList/AnswerList"
 import AnswerForm from "../components/AnswerForm/AnswerForm"
 import Question from "../components/Question/Question"
+import './QuestionDetail.css'
 
 function QuestionDetail() {
     const [question, setQuestion] = useState(null)
@@ -27,6 +28,7 @@ function QuestionDetail() {
     return (
         <section className="section-container">
             <Question question={question}/>
+            <hr className="divider" />
             <AnswerList answers={answers}/>
             <AnswerForm questionId={question.id} setAnswers={setAnswers}/>
         </section>

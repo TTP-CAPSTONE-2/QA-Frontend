@@ -3,7 +3,7 @@ import React from 'react';
 import './UserHeader.css'
 
 
-const UserHeader = ({ name, role, timeAgo }) => {
+const UserHeader = ({ name, timeAgo }) => {
   return (
     <div className="user-header-container">
         {/* For now make a rounded gray circle to simulate */}
