@@ -1,12 +1,16 @@
 function QuestionCard({ question, onVote }) {
-    const handleUpvote = async () => {
+    const handleVote = async (event, delta) => {
+        event.preventDefault();
+        event.stopPropagation();
+
         try {
-            const response = await fetch(`http://localhost:3000/api/questions/${question.id}/upvote`, {
+            const endpoint = delta > 0 ? "upvote" : "downvote";
+            const response = await fetch(`http://localhost:3000/api/questions/${question.id}/${endpoint}`, {
                 method: "PATCH",
             });
 
             if (!response.ok) {
-                throw new Error("Unable to upvote question");
+                throw new Error(`Unable to ${endpoint} question`);
             }
 
             const updatedQuestion = await response.json();
@@ -20,9 +24,15 @@ function QuestionCard({ question, onVote }) {
         <div className="card">
             <h3>{question.title}</h3>
             <h4>{question.body}</h4>
-            <button onClick={handleUpvote} style={{ marginTop: 12 }}>
-                ▲ Upvote ({question.votes || 0})
-            </button>
+            <div style={{ marginTop: 12, display: "flex", gap: 8, alignItems: "center" }}>
+                <button type="button" onClick={(event) => handleVote(event, 1)}>
+                    ▲ Upvote
+                </button>
+                <button type="button" onClick={(event) => handleVote(event, -1)}>
+                    ▼ Downvote
+                </button>
+                <span>Votes: {question.votes || 0}</span>
+            </div>
         </div>
     );
 }
