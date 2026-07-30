@@ -12,6 +12,7 @@ function Home() {
             const response = await fetch("http://localhost:3000/api/questions");
             const data = await response.json();
             setQuestions(data);
+            setLoading(false);
         };
 
         fetchQuestions();
