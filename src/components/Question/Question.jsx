@@ -1,4 +1,5 @@
 import UserHeader from "../UserHeader/UserHeader"
+import ActionBar from "../ActionBar/ActionBar"
 import './Question.css'
 
 function Question ({question}) {
@@ -14,6 +15,7 @@ function Question ({question}) {
             <UserHeader name={user.name} timeAgo={user.createdAt}/>
             <h3 className="question-title">{question.title}</h3>
             <p className="question-body">{question.body}</p>
+            <ActionBar answerCount={question.answers.length}/>
         </div>
     )
 }

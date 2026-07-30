@@ -26,7 +26,7 @@ function AnswerForm ({questionId, setAnswers}) {
     }
 
     return (
-        <form action="" onSubmit={handleAnswerSubmit}>
+        <form action="" className="answer-form"  onSubmit={handleAnswerSubmit}>
             <label htmlFor="answer">You Contribution</label>
             <textarea 
                 name="" 
