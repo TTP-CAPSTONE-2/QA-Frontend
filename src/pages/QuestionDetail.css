@@ -17,22 +17,3 @@ Timestamps / User Roles: font-weight: 400 or 500 with muted gray color (#6B7280)
     min-height: 100dvh;
 }
 
-/* Styles for the qUESTION STUFF */
-.question-container {
-    max-width: 700px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: white;
-}
-
-.question-title {
-    margin-bottom: 12px;
-    font-size: 24px;
-}
-
-.question-body {
-    margin-bottom: 24px;
-    font-size: 16px;
-    line-height: 1.5;
-}
