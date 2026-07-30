@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-import AnswerList from "../components/AnswerList"
-import AnswerForm from "../components/AnswerForm"
+import AnswerList from "../components/AnswerList/AnswerList"
+import AnswerForm from "../components/AnswerForm/AnswerForm"
+import Question from "../components/Question/Question"
 
 function QuestionDetail() {
     const [question, setQuestion] = useState(null)
@@ -24,14 +25,11 @@ function QuestionDetail() {
     if(!question) return <p>Question not found</p>
 
     return (
-        <>
-            <div className="question-container">
-                <h3 className="question-title">{question.title}</h3>
-                <p className="question-body">{question.body}</p>
-            </div>
+        <section className="section-container">
+            <Question question={question}/>
             <AnswerList answers={answers}/>
             <AnswerForm questionId={question.id} setAnswers={setAnswers}/>
-        </>
+        </section>
 
 
 

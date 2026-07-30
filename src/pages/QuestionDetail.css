@@ -1,0 +1,38 @@
+/* Styles for page itself as a whole */
+/* Main Question Title: font-weight: 700 (Bold)
+User Names & "2 Answers": font-weight: 600 (Semi-bold)
+Badges / Tags: font-weight: 600 (Semi-bold or Medium, with text-transform: uppercase for badges)
+Body Text & Comments: font-weight: 400 (Regular)
+Timestamps / User Roles: font-weight: 400 or 500 with muted gray color (#6B7280) */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.section-container {
+    background-color: #fafafa;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100dvh;
+}
+
+/* Styles for the qUESTION STUFF */
+.question-container {
+    max-width: 700px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.question-title {
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.question-body {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+}

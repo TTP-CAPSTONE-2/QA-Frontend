@@ -8,7 +8,7 @@ import QuestionDetail from './pages/QuestionDetail';
 
 function App() {
   return (
-    <div>
+    <div className='app-container'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
