@@ -7,7 +7,7 @@ function Navbar() {
             <div className="nav-links">
                 <Link to="/">All Questions</Link>
                 <Link to="/api/questions">Create Question</Link>
-                <Link /*to={}*/>Login</Link>
+                <Link to="/api/login">Login</Link>
             </div>
         </nav>
     );
