@@ -29,7 +29,7 @@ function RegisterForm() {
         // data will return the name and email(only name is needed) we can redirect to a page where user can login
         // after a message saying you have been sucessfully Registered log in or go back to home page like 2 btns
         // for now we simply redirect to login page after registered
-        navigate('/home')
+        navigate('/api/login')
     }
     return (
         <div>
