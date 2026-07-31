@@ -6,7 +6,7 @@ import AnswerForm from "../components/AnswerForm/AnswerForm"
 import Question from "../components/Question/Question"
 import './QuestionDetail.css'
 
-function QuestionDetail() {
+function QuestionDetail({user}) {
     const [question, setQuestion] = useState(null)
     const [answers, setAnswers] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -39,9 +39,9 @@ function QuestionDetail() {
 
     return (
         <section className="section-container">
-            <Question question={question} onVote={handleVote}/>
+            <Question question={question} onVote={handleVote} user={user}/>
             <hr className="divider" />
-            <AnswerList answers={answers}/>
+            <AnswerList answers={answers} user={user}/>
             <AnswerForm questionId={question.id} setAnswers={setAnswers}/>
         </section>
 
