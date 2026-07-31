@@ -44,17 +44,17 @@ function QuestionCard({ question, onVote, onDelete }) {
     };
 
     return (
-        <div className="card">
+        <div className="question-card">
             <h3>{question.title}</h3>
             <h4>{question.body}</h4>
-            <div style={{ marginTop: 12, display: "flex", gap: 8, alignItems: "center" }}>
-                <button type="button" onClick={handleDelete}>
+            <div className="question-card-actions">
+                <button type="button" onClick={handleDelete} className="question-card-delete">
                     Delete
                 </button>
-                <button type="button" onClick={(event) => handleVote(event, 1)}>
+                <button type="button" onClick={(event) => handleVote(event, 1)} className="question-card-votes">
                     ▲ Upvote
                 </button>
-                <button type="button" onClick={(event) => handleVote(event, -1)}>
+                <button type="button" onClick={(event) => handleVote(event, -1)} className="question-card-votes">
                     ▼ Downvote
                 </button>
                 <span>Votes: {question.votes || 0}</span>

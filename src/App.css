@@ -1,24 +1,42 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  background: #fff;
-}
-
-/* App Styles */
-
+/* Layout & Container */
 .app-container {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  min-height: 100dvh;
+  align-items: center;
   width: 100%;
-  background-color: #fafafa;
+  min-height: 100dvh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  background-color: #f8f9fa;
+  color: #212529;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
+/* Responsive Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Q&A Cards */
+.card,
+.question-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 2px solid #000000 !important;
+  outline: 1px solid #000000;
+  outline-offset: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
