@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import './LoginForm.css'
 import { useState } from 'react'
 
-function LoginForm() {
+function LoginForm({setAuthUser}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -19,12 +19,11 @@ function LoginForm() {
             body: JSON.stringify({
                 email: email,
                 password: password
-            })
+            }) 
         })
         const data = await response.json()
-
+        setAuthUser(data)
         navigate('/')
-        // here make sure to do something with this rertuned value TBA
     }
     return (
         <div>

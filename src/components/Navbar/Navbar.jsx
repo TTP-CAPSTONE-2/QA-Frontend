@@ -1,8 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Navbar.css';
 import TempUserComponent from "../TempUserComponent";
 
-function Navbar({user}) {
+function Navbar({authUser, setAuthUser}) {
+    const navigate = useNavigate();
+
+    async function handleLogOut() {
+        const response = await fetch('http://localhost:3000/api/auth/logout', {
+            credentials: 'include'
+        })
+        const data = await response.json()
+
+        setAuthUser({
+            isLoggedIn: false,
+            user: null
+        })
+        navigate('/api/login')
+    }
     return (
         <nav className="navbar">
             <div className="nav-links">
@@ -12,11 +26,11 @@ function Navbar({user}) {
             </div>
 
             <div className="nav-routes">
-            {user ? (
+            {authUser.isLoggedIn ? (
                 <>
                     {/* Here we simply on click and run the log out and navgiate back to homepage */}
-                    <Link to="/api/logout">Log out</Link> 
-                    <TempUserComponent user={user}/>
+                    <button onClick={handleLogOut}>Log out</button>
+                    <TempUserComponent user={authUser}/>
                 </>
             ) : (
                 <>
