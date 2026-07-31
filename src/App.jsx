@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import './App.css';
 import CreateQuestion from './pages/CreateQuestion';
 import QuestionDetail from './pages/QuestionDetail';
+import LoginForm from './pages/LoginForm/LoginForm';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/api/questions" element={<CreateQuestion />} />
           <Route path="/api/questions/:id" element={<QuestionDetail />} />
+          <Route path="/api/login" element={<LoginForm />}/>
         </Routes>
     </div>
   );
