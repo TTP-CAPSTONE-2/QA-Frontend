@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./CreateQuestion.css"
 
 const API_URL = "http://localhost:3000"
 
-function CreateQuestion() {
+function CreateQuestion({isLoggedIn}) {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
   const [error, setError] = useState("")
@@ -42,6 +42,14 @@ function CreateQuestion() {
     } finally {
       setLoading(false)
     }
+  }
+  if(!isLoggedIn) {
+    return (
+      <div>
+        <h1>You must be logged in to create questions</h1>
+        <button onClick={() => navigate('/api/login')}>Log In</button>
+      </div>
+    )
   }
 
   return (
