@@ -33,6 +33,7 @@ function QuestionDetail({isLoggedIn}) {
         }
         fetchQuestion()
     }, [id])
+
     if(isLoading) return <p>Loading....</p>
     if(!question) return <p>Question not found</p>
 
@@ -40,7 +41,7 @@ function QuestionDetail({isLoggedIn}) {
         <section className="section-container">
             <Question question={question} onVote={handleVote} user={question.user}/>
             <hr className="divider" />
-            <AnswerList answers={answers} user={question.user}/>
+            <AnswerList answers={answers}/>
             {isLoggedIn ? <AnswerForm questionId={question.id} setAnswers={setAnswers}/> : <p>You Must Log in To answer questions</p>}
         </section>
     )

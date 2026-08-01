@@ -9,17 +9,17 @@ function AnswerForm ({questionId, setAnswers}) {
         async function postAnswer() {
             const response = await fetch(`http://localhost:3000/api/questions/${questionId}/answers`, {
                 method: "POST",
+                credentials: 'include',
                 body: JSON.stringify({content: answerInput}),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
             const data = await response.json()
-
-            // the goal here is to return the answer and paste it on the on the answer list
             setAnswers((prevAnswers) => {
                 return [...prevAnswers, data]
             })
+            setAnswerInput('')
         }
 
         postAnswer()
