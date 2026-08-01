@@ -14,6 +14,7 @@ textarea {
     flex-direction: column;
     gap: 12px;
     margin-bottom: 10rem;
+    width: 100%;
 }
 
 .answer-form label {
