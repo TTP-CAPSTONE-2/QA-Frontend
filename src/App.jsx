@@ -28,7 +28,7 @@ const [authUser, setAuthUser] = useState({
       <Navbar authUser={authUser} setAuthUser={setAuthUser}/>        
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/api/questions" element={<CreateQuestion />} />
+          <Route path="/api/questions" element={<CreateQuestion isLoggedIn={authUser.isLoggedIn}/>} />
           <Route path="/api/questions/:id" element={<QuestionDetail isLoggedIn={authUser.isLoggedIn}/>} />
           <Route path="/api/login" element={<LoginForm setAuthUser={setAuthUser}/>}/>
           <Route path="/api/register" element={<RegisterForm />} />
