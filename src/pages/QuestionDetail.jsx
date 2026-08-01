@@ -5,7 +5,7 @@ import AnswerList from "../components/AnswerList/AnswerList"
 import AnswerForm from "../components/AnswerForm/AnswerForm"
 import Question from "../components/Question/Question"
 import './QuestionDetail.css'
-function QuestionDetail() {
+function QuestionDetail({isLoggedIn}) {
     const [question, setQuestion] = useState(null)
     const [answers, setAnswers] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -41,12 +41,8 @@ function QuestionDetail() {
             <Question question={question} onVote={handleVote} user={question.user}/>
             <hr className="divider" />
             <AnswerList answers={answers} user={question.user}/>
-            <AnswerForm questionId={question.id} setAnswers={setAnswers}/>
+            {isLoggedIn ? <AnswerForm questionId={question.id} setAnswers={setAnswers}/> : <p>You Must Log in To answer questions</p>}
         </section>
-
-
-
-        // <QuestionView question={question}/>
     )
 }
 

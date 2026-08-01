@@ -29,7 +29,7 @@ const [authUser, setAuthUser] = useState({
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/api/questions" element={<CreateQuestion />} />
-          <Route path="/api/questions/:id" element={<QuestionDetail />} />
+          <Route path="/api/questions/:id" element={<QuestionDetail isLoggedIn={authUser.isLoggedIn}/>} />
           <Route path="/api/login" element={<LoginForm setAuthUser={setAuthUser}/>}/>
           <Route path="/api/register" element={<RegisterForm />} />
         </Routes>
