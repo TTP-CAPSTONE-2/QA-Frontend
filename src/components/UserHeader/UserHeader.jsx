@@ -4,6 +4,7 @@ import './UserHeader.css'
 
 
 const UserHeader = ({ name, timeAgo }) => {
+  const postDate = new Date(timeAgo).toLocaleDateString()
   return (
     <div className="user-header-container">
         {/* For now make a rounded gray circle to simulate */}
@@ -14,7 +15,7 @@ const UserHeader = ({ name, timeAgo }) => {
           {name}
         </h4>
         <div className="timestamp">
-          <span>Posted {timeAgo}</span>
+          <span>Posted {postDate}</span>
         </div>
       </div>
     </div>

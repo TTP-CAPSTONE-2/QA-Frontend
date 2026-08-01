@@ -26,11 +26,9 @@ function Question ({ question, onVote, user }) {
             console.error(error)
         }
     }
-
-    // Sample dummy user- will change 
     return (
         <div className="question-container">
-            <UserHeader name={user.name} timeAgo={user.createdAt}/>
+            <UserHeader name={user.name} timeAgo={question.createdAt}/>
             <h3 className="question-title">{question.title}</h3>
             <p className="question-body">{question.body}</p>
             <div className="question-card-actions">
